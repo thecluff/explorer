@@ -6,7 +6,7 @@ html(lang="en")
     meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
     // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
     
-    meta(name='description', content='Musicoin block explorer using Parity node.')
+    meta(name='description', content='Block explorer for the Parity blockchain')
     meta(name='author', content='seungjlee')
     meta(name='keywords', content='musicoin, ethereum, explorer, blockchain, etherchain, cryptocurrency, cryptocurrencies, bitcoin')
         
@@ -27,9 +27,10 @@ html(lang="en")
             span.icon-bar
             span.icon-bar
           |  
-          a.navbar-brand(href='/') Musicoin Block Explorer
+          img.className#IdName(src="/logo.png" alt="Image Title" style="padding-top:12px;padding-bottom:12px;")
+          //- a.navbar-brand(href='/') Musicoin Block Explorer
         #navbar.collapse.navbar-collapse
-          ul.nav.navbar-nav
+          ul.nav.navbar-nav(style="padding-top:10px; padding-left:20px")
             li
               a(href='/') Home
             li
@@ -48,7 +49,7 @@ html(lang="en")
                 li
                   a(href='/signature/verify') Verify Signature                
               
-          form.navbar-form.navbar-right(action="/search", method="POST")
+          form.navbar-form.navbar-right(action="/search", method="POST" style="margin-top: 10px")
             .form-group
               input.form-control#search(type='text', placeholder='Block / Tx / Account', name='search')
             |  
@@ -62,11 +63,11 @@ html(lang="en")
         $('[data-toggle="tooltip"]').tooltip()
       })
     
-    div.container
+    div.container(style="text-align:center")
       hr
       footer
         p  
-          a(href="https://github.com/Musicoin/explorer") Musicoin Block Explorer
+          a(href="https://github.com/seungjlee/MusicoinExplorer") Musicoin Block Explorer
           |  | #{nodeStatus.version} | #{nodeStatus.nbrPeers} Peers connected
         p 
           h6
